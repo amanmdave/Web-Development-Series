@@ -1,5 +1,5 @@
 # Web Development Series
-## P Club, Ahmedabad University
+## Programming Club, Ahmedabad University
 
 ---
 
