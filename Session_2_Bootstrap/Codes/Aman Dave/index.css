@@ -1,0 +1,15 @@
+#bgWithText {
+  background-image: url("https://i.pinimg.com/originals/22/61/c0/2261c01c4999fab8466f0e88c1a21cd9.jpg");
+  width: 99vw;
+  height: 600px;
+}
+
+#text {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 300px;
+}
+
+#cell {
+  border: 1px solid black;
+}

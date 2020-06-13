@@ -1,0 +1,28 @@
+
+We use bootstrap as an external shop for our styles!
+
+BOOTSTRAP STYLES ARE PREDEFINED, you could overwrite them if you want!
+
+Bootstrap has a system called GRID SYSTEM!
+
+SCREEN --> CONTAINERS --> ROWS --> COLUMNS
+
+
+
+SUMMATION SHOULD BE EQUAL TO 12!!!
+
+
+XS -- SM -- MD -- LG -- XL
+
+XS is for mobile
+"col-xs-12" :: here 12 because we only want one column on a page
+
+
+SM is for tablet
+"col-sm-6" :: here 6 because we only want TWO columns on a page
+i.e. 6 + 6 equals 12
+
+MD is for laptop
+"col-md-4" :: here 12 because we only want one column on a page
+4 + 4 + 4 equalts 12
+
