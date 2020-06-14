@@ -1,0 +1,53 @@
+body {
+    background: linear-gradient(253deg, #0cc898, #1797d2, #864fe1);
+    animation: Background 5s ease infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes Background {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+h1 {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: -2px;
+    text-shadow: 1px 2px 1px black;
+    font-weight: bold;
+}
+
+.page {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.button-line {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    opacity: 0.5;
+    display: block;
+    width: 100px;
+}
+
+.button-line:hover {
+    opacity: 1;
+}
