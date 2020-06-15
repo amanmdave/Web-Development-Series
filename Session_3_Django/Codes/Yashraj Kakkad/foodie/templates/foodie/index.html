@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Foodie!</title>
+  </head>
+  <body>
+    <img src="{% static 'img/cafe.jpg' %}" />
+    <h1>Welcome people!</h1>
+    {% for food in food_items %}
+    <h2>{{ food.name }}</h2>
+    <h4>Rs: {{ food.price }}</h4>
+    <hr />
+    {% endfor %}
+  </body>
+</html>

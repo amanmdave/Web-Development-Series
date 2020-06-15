@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Details - {{ food_item }}</title>
+  </head>
+  <body>
+    <h1>{{ food_item }}</h1>
+    <h2>{{ food_item.price }}</h2>
+    <h3>{{ food_item.description }}</h3>
+    <p>
+      Ingredients
+    </p>
+    <ul>
+      {% for ingredient in food_item.ingredients.all %}
+      <li>{{ ingredient }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
