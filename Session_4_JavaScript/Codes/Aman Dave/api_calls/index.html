@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Programming Club</title>
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <div class="topnav">
+            <a class="active" href="#home">Programming Club</a>
+            <a href="#news">Events</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </div>
+
+        <!-- HEADING -->
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div id="headingRow">
+                        <h2>
+                            Welcome to Programming Club Website
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                    ID
+                </div>
+                <div class="col-md-2">
+                    FIRST NAME
+                </div>
+                <div class="col-md-2">
+                    LAST NAME
+                </div>
+                <div class="col-md-4">
+                    EMAIL
+                </div>
+                <div class="col-md-3">
+                    AVATAR
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row" id="api"></div>
+        </div>
+
+        <script>
+            let res;
+            axios.get("https://reqres.in/api/users?page=1").then((response) => {
+                console.log(response.data.data);
+                res = response.data.data;
+                console.log(response.status);
+                console.log(res);
+                res.map((user, index) => {
+                    let id = document.createElement("div");
+                    id.className = "col-md-1";
+                    id.innerHTML = user.id;
+                    document.getElementById("api").appendChild(id);
+
+                    let firstname = document.createElement("div");
+                    firstname.className = "col-md-2";
+                    firstname.innerHTML = user.first_name;
+                    document.getElementById("api").appendChild(firstname);
+
+                    let lastname = document.createElement("div");
+                    lastname.className = "col-md-2";
+                    lastname.innerHTML = user.last_name;
+                    document.getElementById("api").appendChild(lastname);
+
+                    let email = document.createElement("div");
+                    email.className = "col-md-4";
+                    email.innerHTML = user.email;
+                    document.getElementById("api").appendChild(email);
+
+                    let avatar = document.createElement("div");
+                    avatar.className = "col-md-3";
+                    let image = document.createElement("img");
+                    image.src = user.avatar;
+                    avatar.appendChild(image);
+                    document.getElementById("api").appendChild(avatar);
+                });
+            });
+        </script>
+    </body>
+</html>

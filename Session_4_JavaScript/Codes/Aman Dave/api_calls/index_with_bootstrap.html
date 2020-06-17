@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Programming Club</title>
+        <link rel="stylesheet" href="./index.css" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-dark bg-dark">
+            <!-- Navbar content -->
+            <a class="navbar-brand" href="#" style="height: 40px;">
+                <img
+                    src="./White_T.png"
+                    width="50"
+                    height="70"
+                    class="d-inline-block align-top"
+                    alt=""
+                    style="position: relative; top: -20px;"
+                    loading="lazy"
+                />
+                Programming Club
+            </a>
+        </nav>
+
+        <!-- HEADING -->
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div id="headingRow">
+                        <h2>
+                            Welcome to Programming Club Website
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="container">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Image</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+
+        <script>
+            var res; // our response object
+            axios.get("https://reqres.in/api/users?page=1").then((response) => {
+                console.log(response.data.data);
+                res = response.data.data;
+                console.log(response.status);
+                console.log(res);
+                let table = document.getElementById("table-body");
+                res.map((user, index) => {
+                    let row = document.createElement("tr");
+                    row.scope = "row";
+
+                    let id = document.createElement("td");
+                    // id.className = "col-md-1";
+                    id.innerHTML = user.id;
+                    row.appendChild(id);
+
+                    let firstname = document.createElement("td");
+                    // firstname.className = "col-md-2";
+                    firstname.innerHTML = user.first_name;
+                    row.appendChild(firstname);
+
+                    let lastname = document.createElement("td");
+                    // lastname.className = "col-md-2";
+                    lastname.innerHTML = user.last_name;
+                    row.appendChild(lastname);
+
+                    let email = document.createElement("td");
+                    // email.className = "col-md-4";
+                    email.innerHTML = user.email;
+                    row.appendChild(email);
+
+                    let avatar = document.createElement("td");
+                    // avatar.className = "col-md-3";
+                    let image = document.createElement("img");
+                    image.src = user.avatar;
+                    avatar.appendChild(image);
+                    row.appendChild(avatar);
+
+                    table.appendChild(row);
+                });
+            });
+        </script>
+    </body>
+</html>
