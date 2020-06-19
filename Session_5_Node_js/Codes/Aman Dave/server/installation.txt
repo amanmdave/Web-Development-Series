@@ -1,0 +1,15 @@
+apt-get install nodejs
+
+npm init
+
+npm install express
+
+npm install nodemon
+
+npm install mongoose // is for connection with mongodb
+
+npm install dotenv // for storing credentials
+
+npm install body-parser // for accessing the body of a req
+
+npm install cors // used for 
